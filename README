@@ -1,3 +1,6 @@
-This file is placed in C:\Program Files\Windows Small Business Server\Bin\webapp\Remote on the Windows Server SBS 2008 machine. It contains the test for RDP, which fails on Windows 10. With the modifications contained herein, it will work with Windows 10.
+This file is placed in C:\Program Files\Windows Small Business Server\Bin\webapp\Remote
+on the Windows Server SBS 2008 machine. It contains the test for RDP, which fails on 
+Windows 10. With the modifications contained herein, it will work with Windows 10.
 
-Please also see this thread: https://social.technet.microsoft.com/Forums/en-US/fb9b0354-0eaf-4cfe-a6db-aace25fce12a/windows-10-and-remote-web-workplace-rdp?forum=winRDc
+Please also see this thread: 
+https://social.technet.microsoft.com/Forums/en-US/fb9b0354-0eaf-4cfe-a6db-aace25fce12a/windows-10-and-remote-web-workplace-rdp?forum=winRDc
