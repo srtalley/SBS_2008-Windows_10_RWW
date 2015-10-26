@@ -141,15 +141,19 @@
 		sub window_onload()
 			Dim targetMachineName
 			Dim version 
+			Dim Parts
+			Dim Major
 			On Error Resume Next
 			version = MsRdpClient.Version
 			if Err then
 			   msgbox ControlLoadFailed_ErrorMessage,0,RemoteDesktopCaption_ErrorMessage
 			   exit sub
 			end if  
+			Parts=split(version,".")
+			Major=CInt(Parts(0))
 			On Error GoTo 0
-			if strcomp(version,"6.0.6000") < 0 then
-			   msgbox IncorrectClientVersion_ErrorMessage, 0, RemoteDesktopCaption_ErrorMessage
+			if Major < 6 then
+			msgbox IncorrectClientVersion_ErrorMessage+" Version: "+version, 0, RemoteDesktopCaption_ErrorMessage
 			   window.close
 			   exit sub
 			end if
@@ -288,7 +292,7 @@
 				MsRdpClient.TransportSettings2.GatewayCredSharing = 1
 				MsRdpClient.TransportSettings2.GatewayDomain = "<%=RWWUtilities.QuoteVbscriptString(strQualifiedDomainName)%>"
 			end if
-
+			MsRdpClient.AdvancedSettings6.EnableCredSspSupport = TRUE
 		end sub
 		
 		sub window_onunload()
